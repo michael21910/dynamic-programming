@@ -1,2 +1,2 @@
-# dynamic-programming
-Implement some problems using dynamic pogramming
+# Dynamic Programming Implementation
+Implement some problems using dynamic pogramming.
