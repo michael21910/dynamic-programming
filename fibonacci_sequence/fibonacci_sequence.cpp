@@ -8,6 +8,8 @@ int main()
     while(cin >> n && n) {
         long long f[n];
         f[0] = 1; f[1] = 1;
+
+        // DP here
         for(int i = 2; i < n; i++) {
             f[i] = f[i - 1] + f[i - 2];
         }
