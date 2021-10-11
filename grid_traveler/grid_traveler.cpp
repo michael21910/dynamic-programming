@@ -3,12 +3,18 @@ using namespace std;
 
 int main()
 {
-    int row, col;
-    cout << "Where do you want to go? (start from (0, 0), row first, column second, enter \"0 0\" to exit): ";
-    while(cin >> row >> col && row && col) {
-        int n = max(row, col);
+    while(true) {
+        // system message
+        cout << "Where do you want to go? (start from (0, 0), row first, column second, enter \"0 0\" to exit): ";
+        int row, col;
+        cin >> row >> col;
+        if(row == 0 && col == 0) {
+            break;
+        }
 
-        int arr[n + 1][n + 1];
+        // initialization
+        int n = max(row, col);
+        long long arr[n + 1][n + 1];
         for(int i = 0; i <= n; i++) {
             for(int j = 0; j <= n; j++) {
                 arr[i][j] = 0;
@@ -16,7 +22,7 @@ int main()
         }
         arr[1][1] = 1;
 
-        // DP here
+        // DP for solving the problem
         for(int i = 1; i <= n; i++) {
             for(int j = 1; j <= n; j++) {
                 if(!(i == 1 && j == 1)) {
